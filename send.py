@@ -5,7 +5,7 @@ import random
 import requests
 import cgi
 import os
-from geolite2 import geolite2
+# from geolite2 import geolite2
 
 
 # 参考サイト
