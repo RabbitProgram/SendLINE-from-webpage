@@ -10,7 +10,7 @@
 まずLINE Notifyのページでアクセストークンを生成してください。（ここで送信先を指定します）<br>
 https://notify-bot.line.me/ja/<br>
 ↓<br>
-コピーしたトークンを環境変数に登録してください。<br>
+コピーしたトークンを「LINE_ACCESS_TOKEN」の名前で環境変数に登録してください。<br>
 （環境変数を使用しない場合は、[send.py](send.py) の「access_token=」より後の部分を適宜変更してください）<br>
 ↓<br>
 index.html を開いて動作を確認します
