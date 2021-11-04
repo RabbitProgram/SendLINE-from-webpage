@@ -13,7 +13,9 @@ https://notify-bot.line.me/ja/<br>
 コピーしたトークンを「LINE_ACCESS_TOKEN」の名前で環境変数に登録してください。<br>
 （環境変数を使用しない場合は、[send.py](send.py) の「access_token=」より後の部分を適宜変更してください）<br>
 ↓<br>
-index.html を開いて動作を確認します
+送信先がグループの場合は、「LINE Norify」アカウントを対象のグループに招待してください。<br>
+↓<br>
+index.html を開いて動作を確認します。
 
 ## 実際の様子
 ![image1](https://user-images.githubusercontent.com/74450836/140334090-7819efd3-8e3f-4228-964b-e4617cf22766.png)
