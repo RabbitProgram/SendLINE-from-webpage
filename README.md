@@ -1,0 +1,2 @@
+# SendLINE-from-webpage
+Webページから特定のグループor自分にLINEメッセージを送ります
