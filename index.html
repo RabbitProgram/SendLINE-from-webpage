@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 参考サイト -->
+<!-- FormでPOST処理をした後に画面遷移させないやり方：https://qiita.com/mczkzk/items/f82284d612ca17d1b2c4 -->
+<!-- レスポンシブ対応（スマホ対応）：https://iro-color.com/design/web/optimized-smartphonesite.html -->
+<!-- CSSで文字間の余白設定：https://webukatu.com/wordpress/blog/7428/#CSS -->
+<!-- CSSボタンデザイン：https://jajaaan.co.jp/css/button/ -->
+<!-- リンクをクリックしてJavaScriptのプログラムを実行する（https://is.gd/BPjqi6）：https://www.ipentec.com/document/javascript-exec-javascript-on-hyperlink-click -->
+<!-- HTML内の文字列をJavaScriptで動的変更：https://javascript.programmer-reference.com/js-dom-inntertext/ -->
+<!-- 日時取得：https://itsakura.com/js-date -->
+<!-- ファビコン一括作成サイト：https://ao-system.net/favicongenerator/ -->
+<!-- 画像を円形表示：https://qumeru.com/magazine/40 -->
+
+<head>
+    <meta http-equiv="content-type" charset="UTF-8">
+    <title>LINE Send</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+
+    <!-- レスポンシブ対応 -->
+    <meta name="viewport" content="width=500, user-scalable=no">
+
+    <!-- 送信ボタンの処理 -->
+    <script type="text/javascript" src="script.js"></script>
+
+    <!-- スタイル適用 -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- ファビコン設定 -->
+    <meta name="msapplication-square70x70logo" content="./favicons/site-tile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="./favicons/site-tile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="./favicons/site-tile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="./favicons/site-tile-310x310.png">
+    <meta name="msapplication-TileColor" content="#0078d7">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicons/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="./favicons/android-chrome-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./favicons/android-chrome-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="./favicons/android-chrome-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="./favicons/android-chrome-128x128.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./favicons/android-chrome-144x144.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="./favicons/android-chrome-152x152.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="./favicons/android-chrome-256x256.png">
+    <link rel="icon" type="image/png" sizes="384x384" href="./favicons/android-chrome-384x384.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./favicons/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="./favicons/icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./favicons/icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="./favicons/icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="./favicons/icon-128x128.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./favicons/icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="./favicons/icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="./favicons/icon-160x160.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="196x196" href="./favicons/icon-196x196.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="./favicons/icon-256x256.png">
+    <link rel="icon" type="image/png" sizes="384x384" href="./favicons/icon-384x384.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./favicons/icon-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/icon-16x16.png">
+    <link rel="icon" type="image/png" sizes="24x24" href="./favicons/icon-24x24.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/icon-32x32.png">
+    <link rel="manifest" href="./favicons/manifest.json">
+    <meta name="msapplication-square70x70logo" content="./favicons/site-tile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="./favicons/site-tile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="./favicons/site-tile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="./favicons/site-tile-310x310.png">
+    <meta name="msapplication-TileColor" content="#0078d7">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicons/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="./favicons/android-chrome-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./favicons/android-chrome-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="./favicons/android-chrome-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="./favicons/android-chrome-128x128.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./favicons/android-chrome-144x144.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="./favicons/android-chrome-152x152.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="./favicons/android-chrome-256x256.png">
+    <link rel="icon" type="image/png" sizes="384x384" href="./favicons/android-chrome-384x384.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./favicons/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="./favicons/icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./favicons/icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="./favicons/icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="./favicons/icon-128x128.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./favicons/icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="./favicons/icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="./favicons/icon-160x160.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="196x196" href="./favicons/icon-196x196.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="./favicons/icon-256x256.png">
+    <link rel="icon" type="image/png" sizes="384x384" href="./favicons/icon-384x384.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./favicons/icon-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/icon-16x16.png">
+    <link rel="icon" type="image/png" sizes="24x24" href="./favicons/icon-24x24.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/icon-32x32.png">
+    <link rel="manifest" href="./favicons/manifest.json">
+
+</head>
+
+<body>
+    <img src="icon_line.png" width="80">
+
+    <form action="https://rabbitprogram.com/python3.8.6/line/groupsend/send.py" method="POST" target="sendText"
+        name="form1">
+        <div>
+            <label style="font-family: 'Fredoka One', cursive;font-size: 20px;">
+                Send a message to the LINE group!</label>
+            <p style="margin-bottom : 50px;"></p>
+            <textarea name="text" rows="5" wrap="soft" style="font-size: 15pt;width: 300px;" id="text"></textarea>
+        </div>
+
+        <p style="margin-bottom : 20px;"></p>
+
+        <div>
+            <a class="btn btn-border-shadow btn-border-shadow--color2" href="javascript:void(0);"
+                onclick="OnSendClick();" style="font-family: 'Montserrat', sans-serif;">Send</a>
+        </div>
+
+        <p style="margin-bottom : 10px;"></p>
+
+        <p id="temporaryBox" style="display: none;">
+            <label id="donetext" style="font-family: 'Montserrat', sans-serif;font-size: 20px;"></label>
+        </p>
+
+    </form>
+
+    <!-- <iframe name="btn btn-border-shadow btn-border-shadow--color2" style="width:0px;height:0px;border:0px;"></iframe> -->
+</body>
+
+</html>
