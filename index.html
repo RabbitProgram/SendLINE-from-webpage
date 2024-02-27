@@ -21,15 +21,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@300&display=swap"
+        rel="stylesheet">
 
     <!-- レスポンシブ対応 -->
     <meta name="viewport" content="width=500, user-scalable=no">
 
-    <!-- 送信ボタンの処理 -->
-    <script type="text/javascript" src="script.js"></script>
+    <!-- ボタンの処理 -->
+    <script type="text/javascript" src="script.js?ver=1"></script>
 
     <!-- スタイル適用 -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css?ver=1">
 
     <!-- ファビコン設定 -->
     <meta name="msapplication-square70x70logo" content="./favicons/site-tile-70x70.png">
@@ -128,29 +131,46 @@
 
     <form action="https://rabbitprogram.com/python3.8.6/line/groupsend/send.py" method="POST" target="sendText"
         name="form1">
-        <div>
-            <label style="font-family: 'Fredoka One', cursive;font-size: 20px;">
-                Send a message to the LINE group!</label>
-            <p style="margin-bottom : 50px;"></p>
+
+        <label style="font-family: 'Fredoka One', cursive;font-size: 20px;">
+            Send a message to the LINE group!</label>
+
+        <p style="margin-bottom:40px;"></p>
+
+        <a id="mode1link" href="javascript:void(0);" onclick="OnMode1Click();">文章を送る</a> /
+        <a id="mode2link" href="javascript:void(0);" onclick="OnMode2Click();">ファイルを送る</a>
+
+        <p id="sendBox1" style="display:block;margin-top: 30px;">
             <textarea name="text" rows="5" wrap="soft" style="font-size: 15pt;width: 300px;" id="text"></textarea>
-        </div>
+        </p>
 
-        <p style="margin-bottom : 20px;"></p>
+        <p id="sendBox2" style="display:block;margin-top: 30px;">
+            <label for="selfile">
+                <span class="uploadButton">ファイルを選択</span>
+                <input id="selfile" type="file">
+            </label>
+            <label id="fileabout" style="font-family: 'Noto Sans JP', sans-serif;font-size: 15px;">最大サイズは500MBです</label>
+        </p>
+
+        <p style="margin-bottom : 30px;"></p>
 
         <div>
-            <a class="btn btn-border-shadow btn-border-shadow--color2" href="javascript:void(0);"
-                onclick="OnSendClick();" style="font-family: 'Montserrat', sans-serif;">Send</a>
+            <a id="sendbutton" class="btn btn-border-shadow" href="javascript:void(0);" onclick="OnSendClick();"
+                style="font-family: 'Montserrat', sans-serif;">Send</a>
         </div>
 
         <p style="margin-bottom : 10px;"></p>
 
         <p id="temporaryBox" style="display: none;">
-            <label id="donetext" style="font-family: 'Montserrat', sans-serif;font-size: 20px;"></label>
+            <label id="donetext" style="font-size: 20px;"></label>
         </p>
 
     </form>
 
     <!-- <iframe name="btn btn-border-shadow btn-border-shadow--color2" style="width:0px;height:0px;border:0px;"></iframe> -->
 </body>
+
+<!-- ボタンの処理 -->
+<script type="text/javascript" src="script.js?ver=1"></script>
 
 </html>
